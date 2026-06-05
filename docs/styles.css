@@ -261,10 +261,6 @@ a:focus-visible {
   box-shadow: 0 8px 28px rgba(33, 43, 38, 0.07);
 }
 
-.copy-panel:first-child {
-  grid-column: 1 / -1;
-}
-
 .copy-panel-header {
   display: flex;
   align-items: center;
@@ -362,9 +358,6 @@ footer {
     max-width: 11ch;
   }
 
-  .copy-panel:first-child {
-    grid-column: auto;
-  }
 }
 
 @media (max-width: 650px) {

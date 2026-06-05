@@ -4,10 +4,16 @@ A portable agent skill for setting up the [Docket2Me MCP server](https://docket2
 
 ## Install
 
-Use the open skills CLI:
+Use the open skills CLI for Codex:
 
 ```bash
-npx skills add ThatGuySam/docket2me-mcp-skill@docket2me-mcp -g -y
+npx skills add ThatGuySam/docket2me-mcp-skill@docket2me-mcp -g -a codex -y
+```
+
+Or for Claude Code:
+
+```bash
+npx skills add ThatGuySam/docket2me-mcp-skill@docket2me-mcp -g -a claude-code -y
 ```
 
 Or paste this into Codex or another agent:
@@ -57,4 +63,4 @@ python3 -m http.server 8080 --directory docs
 
 Then open `http://localhost:8080`.
 
-The skills CLI installs this skill under `~/.agents/skills/docket2me-mcp` for cross-agent discovery.
+The skills CLI installs this skill into the selected agent's user-level skill directory.
