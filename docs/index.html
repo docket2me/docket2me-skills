@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Docket2Me MCP Skill</title>
+    <meta
+      name="description"
+      content="Installable Docket2Me MCP setup skill for Codex, Claude, Cowork, and other AI assistants."
+    >
+    <meta property="og:title" content="Docket2Me MCP Skill">
+    <meta
+      property="og:description"
+      content="A tiny skill that helps AI assistants connect to Docket2Me's Oklahoma court research MCP server."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/docket2me-mcp-hero.png">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="https://docket2me.ai/" aria-label="Docket2Me">
+        <span class="brand-mark" aria-hidden="true">D2M</span>
+        <span>Docket2Me MCP Skill</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#install">Install</a>
+        <a href="https://github.com/ThatGuySam/docket2me-mcp-skill">GitHub</a>
+        <a href="https://docket2me.ai/">Docket2Me</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Installable agent skill</p>
+          <h1>Connect Docket2Me to Codex, Claude, Cowork, and MCP clients.</h1>
+          <p class="lede">
+            A small, auditable skill that teaches an AI assistant how to configure
+            Docket2Me's remote MCP server, launch OAuth sign-in, and verify the
+            connection without handling passwords or tokens.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#install">Copy install prompt</a>
+            <a class="button secondary" href="https://docket2me.ai/">View Docket2Me setup</a>
+          </div>
+        </div>
+        <figure class="hero-visual">
+          <img
+            src="./assets/docket2me-mcp-hero.png"
+            alt="Diagram showing Docket2Me court data flowing through an MCP server into AI assistants."
+            width="1600"
+            height="900"
+          >
+        </figure>
+      </section>
+
+      <section class="band">
+        <div class="section-heading">
+          <p class="eyebrow">What it handles</p>
+          <h2>One skill for the setup details agents forget.</h2>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <h3>Client-specific setup</h3>
+            <p>Codex config, Claude connector steps, Claude Code CLI commands, Cowork remote HTTP setup, and generic MCP settings.</p>
+          </article>
+          <article>
+            <h3>OAuth-safe flow</h3>
+            <p>Keeps access in the normal browser sign-in path and tells agents not to inspect or print credentials.</p>
+          </article>
+          <article>
+            <h3>Verification path</h3>
+            <p>Prompts the assistant to confirm the server appears, OAuth completes, and Docket2Me answers a low-risk query with source links.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="install" id="install">
+        <div class="section-heading">
+          <p class="eyebrow">Install</p>
+          <h2>Copy a command or paste a prompt.</h2>
+          <p>
+            Docket2Me access is member or beta gated. This skill only installs the
+            setup workflow; the MCP server still requires normal Docket2Me sign-in.
+          </p>
+        </div>
+
+        <div class="install-grid">
+          <article class="copy-panel">
+            <div class="copy-panel-header">
+              <h3>Skills CLI</h3>
+              <button type="button" class="copy-button" data-copy-target="skills-cli">Copy</button>
+            </div>
+            <pre><code id="skills-cli">npx skills add ThatGuySam/docket2me-mcp-skill@docket2me-mcp -g -y</code></pre>
+          </article>
+
+          <article class="copy-panel">
+            <div class="copy-panel-header">
+              <h3>Paste Into Codex</h3>
+              <button type="button" class="copy-button" data-copy-target="codex-prompt">Copy</button>
+            </div>
+            <pre><code id="codex-prompt">Install the Docket2Me MCP skill from https://github.com/ThatGuySam/docket2me-mcp-skill.
+Review docket2me-mcp/SKILL.md and referenced scripts first.
+Install the docket2me-mcp folder into ~/.codex/skills/docket2me-mcp.
+Do not inspect or print secrets.
+After installing, use $docket2me-mcp to configure Codex for Docket2Me and leave OAuth sign-in to the normal browser flow.</code></pre>
+          </article>
+
+          <article class="copy-panel">
+            <div class="copy-panel-header">
+              <h3>Paste Into Claude</h3>
+              <button type="button" class="copy-button" data-copy-target="claude-prompt">Copy</button>
+            </div>
+            <pre><code id="claude-prompt">Install the Docket2Me MCP skill from https://github.com/ThatGuySam/docket2me-mcp-skill.
+Review docket2me-mcp/SKILL.md and referenced scripts first.
+Install the docket2me-mcp folder into ~/.claude/skills/docket2me-mcp or your agent's user-level skills folder.
+Do not inspect or print secrets.
+After installing, use the skill to connect Docket2Me in Claude Desktop, Claude Code, Cowork, or another MCP client.</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section class="band compact">
+        <div class="section-heading">
+          <p class="eyebrow">Endpoint</p>
+          <h2>Docket2Me MCP details</h2>
+        </div>
+        <dl class="details">
+          <div>
+            <dt>Server URL</dt>
+            <dd><code>https://docket2me.ai/mcp</code></dd>
+          </div>
+          <div>
+            <dt>Transport</dt>
+            <dd>Streamable HTTP</dd>
+          </div>
+          <div>
+            <dt>Auth</dt>
+            <dd>OAuth 2.1 authorization code with PKCE S256</dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
+    <footer>
+      <span>Open skill repo for Docket2Me MCP setup.</span>
+      <a href="https://github.com/ThatGuySam/docket2me-mcp-skill">GitHub</a>
+      <a href="https://docket2me.ai/">docket2me.ai</a>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

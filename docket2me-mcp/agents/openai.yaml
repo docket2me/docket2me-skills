@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docket2Me MCP"
+  short_description: "Connect Docket2Me MCP clients"
+  default_prompt: "Use $docket2me-mcp to set up Docket2Me for Codex, Claude, Cowork, or another MCP client."
