@@ -1,0 +1,12 @@
+{
+  "name": "docket2me-mcp-skill",
+  "compatibility_date": "2026-06-05",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./docs",
+    "not_found_handling": "404-page"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

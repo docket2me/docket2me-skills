@@ -2,6 +2,8 @@
 
 A portable agent skill for setting up the [Docket2Me MCP server](https://docket2me.ai/) in Codex, Claude Desktop, Claude Code, Cowork, and other MCP clients.
 
+Live install page: <https://docket2me-mcp-skill.samcarlton.workers.dev/>
+
 ## Install
 
 Use the open skills CLI for Codex:
@@ -54,6 +56,21 @@ docs/
 
 Docket2Me access is member or beta gated. This skill does not bypass access controls. It only helps configure clients that already support remote MCP and OAuth.
 
+## Troubleshooting
+
+If a global all-agent install prints this warning:
+
+```text
+docket2me-mcp -> PromptScript: PromptScript does not support global skill installation
+```
+
+the skill usually still installed for the supported agents. To avoid the warning, target the agent explicitly:
+
+```bash
+npx skills add ThatGuySam/docket2me-mcp-skill@docket2me-mcp -g -a codex -y
+npx skills add ThatGuySam/docket2me-mcp-skill@docket2me-mcp -g -a claude-code -y
+```
+
 ## Verify Locally
 
 ```bash
@@ -64,3 +81,9 @@ python3 -m http.server 8080 --directory docs
 Then open `http://localhost:8080`.
 
 The skills CLI installs this skill into the selected agent's user-level skill directory.
+
+## Deploy to Cloudflare
+
+```bash
+wrangler deploy --config wrangler.jsonc --old-asset-ttl 0
+```

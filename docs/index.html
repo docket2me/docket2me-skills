@@ -83,6 +83,8 @@
           <p>
             Docket2Me access is member or beta gated. This skill only installs the
             setup workflow; the MCP server still requires normal Docket2Me sign-in.
+            Use an agent-specific command to avoid unsupported global targets such
+            as PromptScript.
           </p>
         </div>
 
@@ -148,6 +150,19 @@ After installing, use the skill to connect Docket2Me in Claude Desktop, Claude C
             <dd>OAuth 2.1 authorization code with PKCE S256</dd>
           </div>
         </dl>
+      </section>
+
+      <section class="band compact">
+        <div class="section-heading">
+          <p class="eyebrow">Troubleshooting</p>
+          <h2>PromptScript warning</h2>
+          <p>
+            If an all-agent global install prints
+            <code>PromptScript does not support global skill installation</code>,
+            the skill can still be installed. Re-run one of the agent-specific
+            commands above for a clean install.
+          </p>
+        </div>
       </section>
     </main>
 
