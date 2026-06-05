@@ -36,7 +36,10 @@ Configure the Docket2Me remote MCP server for AI assistants that support Streama
 Prefer the bundled helper for `~/.codex/config.toml` because it updates only the `docket2me` MCP block. Resolve `scripts/ensure_codex_mcp.py` relative to this installed skill folder:
 
 ```bash
-SKILL_DIR="${CODEX_HOME:-$HOME/.codex}/skills/docket2me-mcp"
+for candidate in "$HOME/.agents/skills/docket2me-mcp" "${CODEX_HOME:-$HOME/.codex}/skills/docket2me-mcp" "$HOME/.claude/skills/docket2me-mcp"; do
+  if [ -f "$candidate/scripts/ensure_codex_mcp.py" ]; then SKILL_DIR="$candidate"; break; fi
+done
+: "${SKILL_DIR:?Could not find installed docket2me-mcp skill folder}"
 python3 "$SKILL_DIR/scripts/ensure_codex_mcp.py"
 codex mcp login docket2me
 ```
@@ -44,7 +47,10 @@ codex mcp login docket2me
 For a dry run:
 
 ```bash
-SKILL_DIR="${CODEX_HOME:-$HOME/.codex}/skills/docket2me-mcp"
+for candidate in "$HOME/.agents/skills/docket2me-mcp" "${CODEX_HOME:-$HOME/.codex}/skills/docket2me-mcp" "$HOME/.claude/skills/docket2me-mcp"; do
+  if [ -f "$candidate/scripts/ensure_codex_mcp.py" ]; then SKILL_DIR="$candidate"; break; fi
+done
+: "${SKILL_DIR:?Could not find installed docket2me-mcp skill folder}"
 python3 "$SKILL_DIR/scripts/ensure_codex_mcp.py" --dry-run
 ```
 
