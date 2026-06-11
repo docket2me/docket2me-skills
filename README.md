@@ -2,26 +2,24 @@
 
 A portable agent skill for setting up the [Docket2Me MCP server](https://docket2me.ai/) in Codex, Claude Desktop, Claude Code, Cowork, and other MCP clients.
 
-Live install page: <https://docket2me-mcp-skill.samcarlton.workers.dev/>
-
 ## Install
 
 Use the open skills CLI for Codex:
 
 ```bash
-npx skills add ThatGuySam/docket2me-mcp-skill@docket2me-mcp -g -a codex -y
+npx skills add docket2me/docket2me-mcp-skill@docket2me-mcp -g -a codex -y
 ```
 
 Or for Claude Code:
 
 ```bash
-npx skills add ThatGuySam/docket2me-mcp-skill@docket2me-mcp -g -a claude-code -y
+npx skills add docket2me/docket2me-mcp-skill@docket2me-mcp -g -a claude-code -y
 ```
 
 Or paste this into Codex or another agent:
 
 ```text
-Install the Docket2Me MCP skill from https://github.com/ThatGuySam/docket2me-mcp-skill.
+Install the Docket2Me MCP skill from https://github.com/docket2me/docket2me-mcp-skill.
 Review docket2me-mcp/SKILL.md and referenced scripts first.
 Install the docket2me-mcp folder into my user-level skills folder, preferably ~/.agents/skills/docket2me-mcp for cross-agent discovery, or the tool-specific folder for my agent.
 Do not inspect or print secrets.
@@ -44,7 +42,6 @@ The skill gives an agent the current Docket2Me setup workflow:
 docket2me-mcp/
   SKILL.md
   agents/openai.yaml
-  references/current-setup.md
   scripts/ensure_codex_mcp.py
 docs/
   index.html
@@ -67,8 +64,8 @@ docket2me-mcp -> PromptScript: PromptScript does not support global skill instal
 the skill usually still installed for the supported agents. To avoid the warning, target the agent explicitly:
 
 ```bash
-npx skills add ThatGuySam/docket2me-mcp-skill@docket2me-mcp -g -a codex -y
-npx skills add ThatGuySam/docket2me-mcp-skill@docket2me-mcp -g -a claude-code -y
+npx skills add docket2me/docket2me-mcp-skill@docket2me-mcp -g -a codex -y
+npx skills add docket2me/docket2me-mcp-skill@docket2me-mcp -g -a claude-code -y
 ```
 
 ## Verify Locally

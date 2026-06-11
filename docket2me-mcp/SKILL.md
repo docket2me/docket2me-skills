@@ -16,16 +16,7 @@ Configure the Docket2Me remote MCP server for AI assistants that support Streama
    - Cowork
    - another MCP client
 
-2. Check the current source when network access is available:
-
-   ```bash
-   python3 - <<'PY'
-   import urllib.request
-   print(urllib.request.urlopen("https://docket2me.ai/", timeout=20).url)
-   PY
-   ```
-
-   Use `references/current-setup.md` as the local snapshot when offline. If the live page differs from the snapshot, follow the live page and mention the drift.
+2. When network access is available, check the live setup instructions at <https://docket2me.ai/>. If the live page differs from this skill, follow the live page and mention the drift.
 
 3. Respect access requirements. Docket2Me access is membership/beta gated. Sign-in is passwordless: the user signs in with their membership email and receives a code by email. Do not try to bypass OAuth, scrape private endpoints, inspect stored tokens, or ask the user for a password. Let the client launch the normal browser sign-in flow.
 
@@ -148,5 +139,5 @@ Report the client configured, whether OAuth sign-in completed, which command or 
 
 ## Resources
 
-- `references/current-setup.md`: public Docket2Me setup snapshot checked on June 10, 2026.
+- <https://docket2me.ai/>: live public setup instructions.
 - `scripts/ensure_codex_mcp.py`: safe Codex config helper for the `docket2me` MCP block.
