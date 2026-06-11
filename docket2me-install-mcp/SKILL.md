@@ -1,5 +1,5 @@
 ---
-name: docket2me-mcp
+name: docket2me-install-mcp
 description: Set up, verify, or troubleshoot the Docket2Me remote MCP server for Codex, Claude Desktop, Claude Code, Cowork, or other MCP clients. Use when the user asks to connect docket2me.ai, configure the Docket2Me MCP endpoint, add Oklahoma court research tools to an AI assistant, run Codex MCP login, add a Claude or Cowork MCP server, or bridge Docket2Me through mcp-remote.
 ---
 
@@ -27,10 +27,10 @@ Configure the Docket2Me remote MCP server for AI assistants that support Streama
 Prefer the bundled helper for `~/.codex/config.toml` because it updates only the `docket2me` MCP block. Resolve `scripts/ensure_codex_mcp.py` relative to this installed skill folder:
 
 ```bash
-for candidate in "$HOME/.agents/skills/docket2me-mcp" "${CODEX_HOME:-$HOME/.codex}/skills/docket2me-mcp" "$HOME/.claude/skills/docket2me-mcp"; do
+for candidate in "$HOME/.agents/skills/docket2me-install-mcp" "${CODEX_HOME:-$HOME/.codex}/skills/docket2me-install-mcp" "$HOME/.claude/skills/docket2me-install-mcp"; do
   if [ -f "$candidate/scripts/ensure_codex_mcp.py" ]; then SKILL_DIR="$candidate"; break; fi
 done
-: "${SKILL_DIR:?Could not find installed docket2me-mcp skill folder}"
+: "${SKILL_DIR:?Could not find installed docket2me-install-mcp skill folder}"
 python3 "$SKILL_DIR/scripts/ensure_codex_mcp.py"
 codex mcp login docket2me
 ```
@@ -38,10 +38,10 @@ codex mcp login docket2me
 For a dry run:
 
 ```bash
-for candidate in "$HOME/.agents/skills/docket2me-mcp" "${CODEX_HOME:-$HOME/.codex}/skills/docket2me-mcp" "$HOME/.claude/skills/docket2me-mcp"; do
+for candidate in "$HOME/.agents/skills/docket2me-install-mcp" "${CODEX_HOME:-$HOME/.codex}/skills/docket2me-install-mcp" "$HOME/.claude/skills/docket2me-install-mcp"; do
   if [ -f "$candidate/scripts/ensure_codex_mcp.py" ]; then SKILL_DIR="$candidate"; break; fi
 done
-: "${SKILL_DIR:?Could not find installed docket2me-mcp skill folder}"
+: "${SKILL_DIR:?Could not find installed docket2me-install-mcp skill folder}"
 python3 "$SKILL_DIR/scripts/ensure_codex_mcp.py" --dry-run
 ```
 
