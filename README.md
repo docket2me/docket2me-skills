@@ -36,19 +36,6 @@ The skill gives an agent the current Docket2Me setup workflow:
 - Verify the client connection with a low-risk Docket2Me query
 - Use `mcp-remote` only when a client lacks remote MCP support
 
-## Repo Layout
-
-```text
-docket2me-install-mcp/
-  SKILL.md
-  agents/openai.yaml
-  scripts/ensure_codex_mcp.py
-docs/
-  index.html
-  styles.css
-  script.js
-```
-
 ## Access
 
 Docket2Me access is member or beta gated. This skill does not bypass access controls. It only helps configure clients that already support remote MCP and OAuth.
@@ -68,19 +55,6 @@ npx skills add docket2me/docket2me-skills@docket2me-install-mcp -g -a codex -y
 npx skills add docket2me/docket2me-skills@docket2me-install-mcp -g -a claude-code -y
 ```
 
-## Verify Locally
-
-```bash
-python3 docket2me-install-mcp/scripts/ensure_codex_mcp.py --config /tmp/codex-config.toml --dry-run
-python3 -m http.server 8080 --directory docs
-```
-
-Then open `http://localhost:8080`.
-
 The skills CLI installs this skill into the selected agent's user-level skill directory.
 
-## Deploy to Cloudflare
-
-```bash
-wrangler deploy --config wrangler.jsonc --old-asset-ttl 0
-```
+Maintainer docs: [MAINTAINERS.md](MAINTAINERS.md)
